@@ -9,10 +9,12 @@ import Error from './pages/Error';
 function App() {
   return (
     <div className="App">
-      <Route path ='/' component={Home}>
-      <Route path ='/' component={Rooms}>
-      <Route path ='/' component={SingleRoom}>
-      <Route path ='/' component={Error}>
+      <Switch>
+        <Route exact path ='/' component={Home}/>
+        <Route exact path ='/rooms' component={Rooms}/>
+        <Route exact path ='/rooms/:id' component={SingleRoom}/>
+        <Route component={Error} />
+      </Switch>
     </div>
   );
 }
