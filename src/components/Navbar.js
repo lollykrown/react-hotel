@@ -15,8 +15,8 @@ export default class Navbar extends Component {
     render() {
         return (
             <nav className="navbar">
-                <div className="navbar-center">
-                    <div className="navbar-header"> 
+                <div className="nav-center">
+                    <div className="nav-header"> 
                         <Link to="/">
                             <img src={logo} alt="Beach Resort"/>
                         </Link>
@@ -24,8 +24,13 @@ export default class Navbar extends Component {
                         onClick={this.handleToggle}>
                             <FaAlignRight className="nav-icon"/>
                         </button>
-                        <ul>
-
+                        <ul className={this.state.isOpen ? "nav-links show-nav":"nav-links"}>
+                            <li>
+                            <Link to="/">Home</Link>
+                            </li>
+                            <li>
+                            <Link to="/rooms">Rooms</Link>
+                            </li>
                         </ul>
                     </div>
                 </div>
