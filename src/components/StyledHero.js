@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import defaultImg from '../images/room-1.jpeg'
-const orange = '#f15025'
 
 const StyledHero = styled.header`
 min-height:60vh;

@@ -34,6 +34,7 @@ export default class SingleRoom extends Component {
                 </div>
         } 
         const {name, description,capacity,size,price,extras,breakfast,pets,images} = room
+        const [mainImg, ...defaultImg] = images
         return (
             <>
                 <StyledHero img={images[0] || this.state.defaultBcg}>
@@ -49,6 +50,32 @@ export default class SingleRoom extends Component {
                             return <img key={i} src={item} alt={name} />;
                         })}
                     </div>
+                    <div className="single-room-info">
+                        <article className="desc">
+                            <h3>details</h3>
+                            <p>{description}</p>
+                        </article>
+                        <article className="info">
+                            <h3>info</h3>
+                            <p>price: {price}</p>
+                            <p>size: {size} SQFT</p>
+                            <h6>
+                                max capacity: {""}
+                                {capacity >1 ? `${capacity} people`:
+                                `${capacity} person`}
+                            </h6>
+                            <h6>
+                                {pets ? 'pets allowed': 'no pets allowed'
+                                `${capacity} person`}
+                            </h6>
+                            <h6>{breakfast && 'free breakfast included'}</h6>
+                        </article>
+                    </div>
+                </section>
+                <section className="room-extras">
+                    ul.extras
+                
+                
                 </section>
             </>
         )
