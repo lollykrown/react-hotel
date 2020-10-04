@@ -25,14 +25,17 @@ const RoomsFilter = ({ rooms }) => {
 
   // get unique types
   let types = getUnique(rooms, "type");
+
   // add all
   types = ["all", ...types];
+
   // map to jsx
   types = types.map((item, index) => (
     <option key={index} value={item}>
       {item}
     </option>
   ));
+  
   // get unique capacity
   let people = getUnique(rooms, "capacity");
   people = people.map((item, index) => (
